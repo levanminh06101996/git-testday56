@@ -11,8 +11,7 @@ exports.getList = async (req, res) => {
 };
 
 exports.getOne = async (req, res) => {
-  const user = await usersService.getById(req.params.id);
-  response.success(res, 200, user);
+  response.success(res, 200, req.user);
 };
 
 exports.create = async (req, res) => {
@@ -21,11 +20,11 @@ exports.create = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
-  const user = await usersService.update(req.params.id, req.body);
+  const user = await usersService.update(req.user.id, req.body);
   response.success(res, 200, user);
 };
 
 exports.remove = async (req, res) => {
-  await usersService.remove(req.params.id);
+  await usersService.remove(req.user.id);
   response.success(res, 204);
 };
