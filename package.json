@@ -1,9 +1,12 @@
 {
     "type": "commonjs",
     "dependencies": {
+        "@faker-js/faker": "^9.7.0",
+        "ejs": "^3.1.10",
         "express": "^5.1.0",
         "express-validator": "^7.2.1",
-        "module-alias": "^2.2.3"
+        "module-alias": "^2.2.3",
+        "slugify": "^1.6.6"
     },
     "_moduleAliases": {
         "@": "src"
