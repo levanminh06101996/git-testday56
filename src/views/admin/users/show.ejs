@@ -6,11 +6,9 @@
     <title>Document</title>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <ul>
-      <% for (let user of users) { %>
-      <li><%= user.name %></li>
-      <% }%>
-    </ul>
+    <main>
+      <h1><%= user.name %></h1>
+      <p>Created: <%= user.created_at %></p>
+    </main>
   </body>
 </html>

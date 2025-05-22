@@ -8,8 +8,8 @@
   <body>
     <h1><%= title %></h1>
     <ul>
-      <% for (let user of users) { %>
-      <li><%= user.name %></li>
+      <% for (user of users) { %>
+      <li><a href="/admin/posts/<%=user.id %>"><%= user.title %></a></li>
       <% }%>
     </ul>
   </body>

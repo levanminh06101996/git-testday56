@@ -6,10 +6,11 @@
     <title>Document</title>
   </head>
   <body>
-    <h1><%= title %></h1>
     <ul>
-      <% for (let user of users) { %>
-      <li><%= user.name %></li>
+      <% for (user of post) { %>
+      <li><%= user.title %></li>
+      <li><%= user.description %></li>
+      <li><%= user.id %></li>
       <% }%>
     </ul>
   </body>
