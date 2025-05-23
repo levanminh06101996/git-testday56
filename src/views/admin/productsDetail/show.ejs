@@ -7,10 +7,10 @@
   </head>
   <body>
     <ul>
-      <% for (user of post) { %>
-      <li><%= user.title %></li>
-      <li><%= user.description %></li>
-      <li><%= user.id %></li>
+      <% for (post of posts) { %>
+      <li><%= post.title %></li>
+      <li><%= post.description %></li>
+      <li><%= post.id %></li>
       <% }%>
     </ul>
   </body>

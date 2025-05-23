@@ -11,6 +11,6 @@ exports.index = async (req, res) => {
 };
 
 exports.show = async (req, res) => {
-  const user = usersService.getById(req.params.id);
+  const user = await usersService.getById(req.params.id);
   res.render("admin/users/show", { user });
 };

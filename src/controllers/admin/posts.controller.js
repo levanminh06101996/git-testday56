@@ -1,11 +1,16 @@
-const postsSevice = require("../../services/posts.service");
+const postsSevice = require("../../services/postsdb.service");
 
 exports.index = async (req, res) => {
-  const items = await postsSevice.getAllPosts(1, 20);
-  console.log(items);
+  const result = await postsSevice.getAll(1, 20);
+  const items = result.items;
 
   res.render("admin/posts/index", {
     title: "posts list",
-    users: items,
+    posts: items,
   });
+};
+
+exports.show = async (req, res) => {
+  const post = await postsSevice.getById(req.params.id);
+  res.render("admin/posts/show", { post });
 };
