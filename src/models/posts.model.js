@@ -4,7 +4,7 @@ const { buildInsertQuery, buildUpdateQuery } = require("../utils/queryBuider");
 exports.findAll = async (page, limit) => {
   const offset = (page - 1) * limit;
   const [posts] = await db.query(
-    `select id, title, description, created_at from posts order by created_at desc limit ? offset ?`,
+    `select id, title, description, created_at,published_at from posts where published_at is not null order by created_at desc limit ? offset ?`,
     [limit, offset]
   );
   return posts;

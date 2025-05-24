@@ -1,6 +1,6 @@
 const express = require("express");
-const usersController = require("../controllers/users.controller");
-const userModel = require("../models/users.model");
+const usersController = require("../../controllers/api/users.controller");
+const userModel = require("../../models/users.model");
 const throw404 = require("@/utils/throw404");
 const router = express.Router();
 

@@ -1,5 +1,5 @@
-const usersService = require("../services/users.services");
-const response = require("../utils/response");
+const usersService = require("../../services/users.services");
+const response = require("../../utils/response");
 
 // exports.getUsers = async (req, res) => {
 //   const users = await userModel.getUsers();

@@ -1,17 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <main>
-      <ul>
-        <li><%= user.name %></li>
-        <li><%= user.phone %></li>
-        <li><%= user.email%></li>
+<main class="content-wrapper">
+  <div class="content-header">
+    <h1><%= title %></h1>
+    <div>
+      <a href="users.html" class="btn btn-secondary" id="backButton">
+        <i class="fas fa-arrow-left"></i> Back
+      </a>
+      <a href="#" class="btn btn-primary" id="editButton">
+        <i class="fas fa-edit"></i> Edit
+      </a>
+    </div>
+  </div>
+
+  <!-- User Details Container -->
+  <div class="card">
+    <div class="card-header">
+      <h3 id="itemTitle">Loading... <%= user.username %></h3>
+    </div>
+    <div class="card-body">
+      <div id="itemContent">
+        <!-- Will be populated with JavaScript -->
+        <div class="loading-spinner">Loading details...<%= user.email %></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity History -->
+  <div class="card">
+    <div class="card-header">
+      <h3>Activity History <%= user.phone %></h3>
+    </div>
+    <div class="card-body">
+      <ul class="activity-list" id="activityList">
+        <!-- Will be populated with JavaScript -->
       </ul>
-    </main>
-  </body>
-</html>
+    </div>
+  </div>
+</main>
