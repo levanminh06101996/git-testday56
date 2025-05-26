@@ -16,6 +16,7 @@ app.set("layout", "admin/layouts/default/index");
 
 app.use(express.static("public"));
 app.use(express.json());
+app.use(express.urlencoded());
 
 app.use(handlePagination);
 // app.use(responseEnhancer);
