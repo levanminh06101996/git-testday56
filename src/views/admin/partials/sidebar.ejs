@@ -6,7 +6,7 @@
   <nav class="sidebar-menu">
     <% for (let item of sidebarItems) {%>
     <a
-      href="admin/<%= item.path %>"
+      href="/admin/<%= item.path %>"
       class="menu-item <%= item.path === path ? 'active' : '' %>"
     >
       <i class="fas <%= item.icon %>"></i>

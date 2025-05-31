@@ -5,10 +5,28 @@
       <a href="users.html" class="btn btn-secondary" id="backButton">
         <i class="fas fa-arrow-left"></i> Back
       </a>
-      <a href="#" class="btn btn-primary" id="editButton">
+      <a
+        href="/admin/users/edit/<%= user.id %>"
+        class="btn btn-primary"
+        id="editButton"
+      >
         <i class="fas fa-edit"></i> Edit
       </a>
     </div>
+
+    <form
+      method="POST"
+      action="/admin/users/<%= user.id %>?_method=DELETE"
+      style="display: inline"
+    >
+      <button
+        type="submit"
+        onclick="return confirm('Xóa?')"
+        class="btn btn-danger"
+      >
+        Xoá
+      </button>
+    </form>
   </div>
 
   <!-- User Details Container -->

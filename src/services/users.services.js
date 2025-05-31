@@ -26,6 +26,11 @@ class UsersService {
     const user = await usersModel.remove(id);
     return user;
   }
+
+  async getByEmailAndPassword(email, password) {
+    const user = await usersModel.findByEmailAndPassword(email, password);
+    return user;
+  }
 }
 
 module.exports = new UsersService();

@@ -22,7 +22,12 @@
 </div>
 
 <!-- Edit User Form -->
-<form id="editUserForm" class="card">
+<form
+  id="editUserForm"
+  class="card"
+  method="POST"
+  action="/admin/users/edit/<%=user.id%>?_method=PUT"
+>
   <div class="card-header">
     <h3>User Information</h3>
   </div>
@@ -30,13 +35,12 @@
     <div class="form-section">
       <h3>Personal Information</h3>
       <div class="form-group">
-        <label for="userName">Full Name*</label>
+        <label for="userName">Full Name</label>
         <input
           type="text"
           id="userName"
-          name="userName"
+          name="name"
           class="form-control"
-          required
           data-validate="name"
         />
         <span class="error-text" id="userNameError"></span>
@@ -44,14 +48,8 @@
 
       <div class="form-row">
         <div class="form-group">
-          <label for="userEmail">Email*</label>
-          <input
-            type="email"
-            id="userEmail"
-            name="userEmail"
-            class="form-control"
-            required
-          />
+          <label for="userEmail">Email</label>
+          <input type="text" id="userEmail" name="email" class="form-control" />
           <span class="error-text" id="userEmailError"></span>
         </div>
 
@@ -60,7 +58,7 @@
           <input
             type="tel"
             id="userPhone"
-            name="userPhone"
+            name="phone"
             class="form-control"
             data-validate="phone"
           />
@@ -72,7 +70,7 @@
         <label for="userAddress">Address</label>
         <textarea
           id="userAddress"
-          name="userAddress"
+          name="address"
           class="form-control"
           rows="2"
         ></textarea>
@@ -83,67 +81,15 @@
     <div class="form-section">
       <h3>Account Information</h3>
       <div class="form-group">
-        <label for="userUsername">Username*</label>
+        <label for="username">Username</label>
         <input
           type="text"
           id="userUsername"
-          name="userUsername"
+          name="username"
           class="form-control"
-          required
           data-validate="username"
         />
         <span class="error-text" id="userUsernameError"></span>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="userRole">Role*</label>
-          <select id="userRole" name="userRole" class="form-control" required>
-            <option value="">Select Role</option>
-            <option value="admin">Administrator</option>
-            <option value="editor">Editor</option>
-            <option value="viewer">Viewer</option>
-          </select>
-          <span class="error-text" id="userRoleError"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="userStatus">Status*</label>
-          <select
-            id="userStatus"
-            name="userStatus"
-            class="form-control"
-            required
-          >
-            <option value="">Select Status</option>
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-            <option value="pending">Pending</option>
-          </select>
-          <span class="error-text" id="userStatusError"></span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="dateCreated">Date Created</label>
-        <input
-          type="text"
-          id="dateCreated"
-          class="form-control"
-          readonly
-          disabled
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="lastLogin">Last Login</label>
-        <input
-          type="text"
-          id="lastLogin"
-          class="form-control"
-          readonly
-          disabled
-        />
       </div>
     </div>
 
@@ -156,7 +102,7 @@
           <input
             type="password"
             id="userPassword"
-            name="userPassword"
+            name="password"
             class="form-control"
             data-validate="password"
           />
@@ -168,7 +114,7 @@
           <input
             type="password"
             id="userConfirmPassword"
-            name="userConfirmPassword"
+            name="confirm_password"
             class="form-control"
           />
           <span class="error-text" id="userConfirmPasswordError"></span>
@@ -180,39 +126,12 @@
       </p>
     </div>
 
-    <div class="form-section">
-      <h3>Email Notifications</h3>
-      <div class="form-group">
-        <div class="checkbox-group">
-          <input
-            type="checkbox"
-            id="emailNotifications"
-            name="emailNotifications"
-            checked
-          />
-          <label for="emailNotifications"
-            >Send email notifications to this user</label
-          >
-        </div>
-        <div class="checkbox-group">
-          <input
-            type="checkbox"
-            id="adminNotifications"
-            name="adminNotifications"
-          />
-          <label for="adminNotifications"
-            >Notify administrators about changes to this user</label
-          >
-        </div>
-      </div>
-    </div>
-
     <div class="form-buttons">
       <button type="button" class="btn btn-secondary" id="cancelBtn">
         Cancel
       </button>
       <button type="submit" class="btn btn-primary">
-        <i class="fas fa-save"></i> Save Changes
+        <i class="fas fa-save"></i> Cập Nhật
       </button>
     </div>
   </div>

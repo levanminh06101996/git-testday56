@@ -56,6 +56,14 @@ exports.remove = async (id) => {
   return affectedRows > 0;
 };
 
+exports.findByEmailAndPassword = async (email, password) => {
+  const [users] = await db.query(
+    `select * from users where email = ? and password = ?`,
+    [email, password]
+  );
+
+  return users[0];
+};
 // lấy dữ liệu bt
 // exports.findAll = async () => {
 //   const [users] = await db.query("select * from users");
